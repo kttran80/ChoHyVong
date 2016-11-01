@@ -1,7 +1,7 @@
 /**
  * Greeter
  */
-class Greeter {
+export class Greeter {
     constructor(private message: string) {
         
     }

@@ -92,12 +92,18 @@ npm install typescript@next -g
 install typings tool (replaced tsd)
 npm install typings -g 
 
+## install webpack
+for loader (main entry)
+npm install webpack -g 
 
 <a id="markdown-list-npm-user-installed-packages" name="list-npm-user-installed-packages"></a>
 ## list npm user-installed packages
 from http://stackoverflow.com/questions/17937960/how-to-list-npm-user-installed-packages
 I do
 npm list -g --depth=0
+
+## where npm packages installed
+npm root -g
 
 <a id="markdown-then-install-at-local" name="then-install-at-local"></a>
 ## then install at local:
@@ -176,3 +182,108 @@ and modify the project.json file
 "Microsoft.AspNetCore.StaticFiles":"1.0.0",
 
 before working on webpack, export keyword
+export is for other to use symbols (class, variable, function)
+export is to access scope
+
+bootstrap == main == entry point in other C language
+appjs, aurelia for bootstrap
+we usually rely on systemjs, requirejs implementation
+so we use webpack to have the loader for the entry point!
+
+### add main.ts 
+
+import { Greeter } from "./greeter"
+export /**
+ * Main
+ */
+class Main {
+    private greeter: Greeter;
+    constructor() {
+        this.greeter = new Greeter("world!");
+    }
+    sayHello()
+    {
+        this.greeter.sayHello();
+        document.getElementById("greeting").innerHTML = "<h1>" + this.greeter.greetingMessage + "/</h1>"; 
+    }
+    get greetingMessage(): string {
+        return this.greeter.greetingMessage;
+    }
+}
+
+var m = new Main();
+m.sayHello();
+console.log(m.greetingMessage);
+
+## config webpack to have an entry point
+run this command
+webpack ./wwwroot/app/main.js ./wwwroot/app/bundle.js
+
+## install a nice console emulator
+http://cmder.net/
+
+after that clean up index.html and then modify in the script section
+<script src="/app/bundle.js"></script>
+
+## we can stop the typescript watch loader too and use webpack !!!!
+
+## explore webpack 
+webpack --help
+
+add new file: webpack.config.js on the root
+
+and search in chrome: awesome typescript loader
+npm install awesome-typescript-loader --save-dev
+
+then copy this to webpack.config.js
+
+module.exports = {
+    entry: "./src/app/main.ts",
+    output: {
+        path: __dirname + "/wwwroot/app",
+        filename: "bundle.js" 
+    },
+
+  // Currently we need to add '.ts' to the resolve.extensions array.
+  resolve: {
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx']
+  },
+
+  // Source maps support ('inline-source-map' also works)
+  devtool: 'source-map',
+
+  // Add the loader for .ts files.
+  module: {
+    loaders: [
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      }
+    ]
+  }
+};
+
+then in the tsconfig.json, we need to change to this
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        //"inlineSourceMap": true, //for debug
+        "sourceMap": true,
+        // "inlineSources": true,
+        "sourceRoot": "src/app",
+        "outDir": "wwwroot/app"
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
