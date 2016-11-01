@@ -175,4 +175,4 @@ add app.UseStaticFiles(); to startup.cs file
 and modify the project.json file
 "Microsoft.AspNetCore.StaticFiles":"1.0.0",
 
-
+before working on webpack, export keyword
