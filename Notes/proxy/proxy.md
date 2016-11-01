@@ -17,6 +17,7 @@
         10. [10. install typing behind corporate proxy](#10-install-typing-behind-corporate-proxy)
         11. [11. vs code setting sync behind the proxy](#11-vs-code-setting-sync-behind-the-proxy)
         12. [12. calibre behind proxy](#12-calibre-behind-proxy)
+        13. [Visual studio changes](#visual-studio-changes)
 
 <!-- /TOC -->
 
@@ -181,4 +182,18 @@
 
 	You could also set it as a user variable for the current user.
 
+<a id="markdown-visual-studio-changes" name="visual-studio-changes"></a>
+### Visual studio changes
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE
+devenv.exe.config
 
+        <system.net>
+        <defaultProxy enabled="true" useDefaultCredentials="false">
+                <proxy bypassonlocal="true" proxyaddress="http://10.160.0.45:80"/>
+        </defaultProxy>
+            <settings>
+                <ipv6 enabled="true"/>
+            </settings>
+        </system.net>
+
+		
