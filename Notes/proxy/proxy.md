@@ -44,6 +44,9 @@
 	and we need install this mingw
 	http://www.mingw.org/wiki/getting_started
 
+	we can download the mingw bundle msys core if it need to install after proxy
+	https://sourceforge.net/projects/mingwbundle/
+
 	2 ways, I chose install using GUI
 	and then add to environment PATH the <install folder>\path
 
