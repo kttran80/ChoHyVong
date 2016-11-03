@@ -18,6 +18,7 @@
         11. [11. vs code setting sync behind the proxy](#11-vs-code-setting-sync-behind-the-proxy)
         12. [12. calibre behind proxy (no no!)](#12-calibre-behind-proxy-no-no)
         13. [Visual studio changes](#visual-studio-changes)
+        14. [nuget setting](#nuget-setting)
 
 <!-- /TOC -->
 
@@ -175,7 +176,7 @@
 	
 <a id="markdown-12-calibre-behind-proxy-no-no" name="12-calibre-behind-proxy-no-no"></a>
 ### 12. calibre behind proxy (no no!)
-	THIS AFFECTS MY VISUAL STUDIO NUGET
+	THIS AFFECTS MY VISUAL STUDIO NUGET from here http://stackoverflow.com/questions/11553591/nuget-unable-to-connect-to-remote-server
 
 	Try going to Control Panel | System & Security | System or
 	Control Panel | System 
@@ -200,5 +201,35 @@ devenv.exe.config
                 <ipv6 enabled="true"/>
             </settings>
         </system.net>
+
+<a id="markdown-nuget-setting" name="nuget-setting"></a>
+### nuget setting
+from https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior
+to know the hierachy
+
+(For solution-level packages only in NuGet 2.x; ignored in NuGet 3.x)
+c:\A\B\C\.nuget\NuGet.Config
+
+(For all version of NuGet)
+c:\A\B\C\NuGet.Config
+c:\A\B\NuGet.Config
+c:\A\NuGet.Config
+c:\NuGet.Config
+
+configFile, if specified
+
+(Ignored in NuGet 3.4 and later if -configFile is used)
+%AppData%\NuGet\NuGet.Config
+
+(NuGet 2.6 and later) 
+%ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\NuGet.Config
+%ProgramData%\NuGet\Config\{IDE}\{Version}\NuGet.Config
+%ProgramData%\NuGet\Config\{IDE}\NuGet.Config
+%ProgramData%\NuGet\Config\NuGet.Config
+
+or from https://docs.nuget.org/ndocs/schema/nuget.config-file
+
+ac1bfa435450219c16639f0a579890128ecfb40c46dcc89cf9a1b7b2137ef13b8ac87bb696a680321470aa471356f3ee 
+
 
 		
