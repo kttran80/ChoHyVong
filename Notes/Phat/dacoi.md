@@ -18,3 +18,7 @@ tình cờ bị đột quị, chợt tỉnh dậy
 ##TS Nguyễn Mạnh Hùng
 một chú vươn lên thay đổi số phận mình 
 từ con, anh trong gia đình nghèo khổ, biết vươn lên
+
+Làm thế nào trước đố kig ganh ghét
+https://www.youtube.com/watch?v=DFtpjGpyhak
+

@@ -12,8 +12,15 @@
     8. [fix warning with "pdb" file:](#fix-warning-with-pdb-file)
     9. [adding new controller:](#adding-new-controller)
     10. [intall typescript by npm](#intall-typescript-by-npm)
-    11. [list npm user-installed packages](#list-npm-user-installed-packages)
-    12. [then install at local:](#then-install-at-local)
+    11. [install webpack](#install-webpack)
+    12. [list npm user-installed packages](#list-npm-user-installed-packages)
+    13. [where npm packages installed](#where-npm-packages-installed)
+    14. [then install at local:](#then-install-at-local)
+        1. [add main.ts](#add-maints)
+    15. [config webpack to have an entry point](#config-webpack-to-have-an-entry-point)
+    16. [install a nice console emulator](#install-a-nice-console-emulator)
+    17. [we can stop the typescript watch loader too and use webpack !!!!](#we-can-stop-the-typescript-watch-loader-too-and-use-webpack-)
+    18. [explore webpack](#explore-webpack)
 
 <!-- /TOC -->
 
@@ -92,6 +99,7 @@ npm install typescript@next -g
 install typings tool (replaced tsd)
 npm install typings -g 
 
+<a id="markdown-install-webpack" name="install-webpack"></a>
 ## install webpack
 for loader (main entry)
 npm install webpack -g 
@@ -102,6 +110,7 @@ from http://stackoverflow.com/questions/17937960/how-to-list-npm-user-installed-
 I do
 npm list -g --depth=0
 
+<a id="markdown-where-npm-packages-installed" name="where-npm-packages-installed"></a>
 ## where npm packages installed
 npm root -g
 
@@ -190,6 +199,7 @@ appjs, aurelia for bootstrap
 we usually rely on systemjs, requirejs implementation
 so we use webpack to have the loader for the entry point!
 
+<a id="markdown-add-maints" name="add-maints"></a>
 ### add main.ts 
 
 import { Greeter } from "./greeter"
@@ -215,18 +225,22 @@ var m = new Main();
 m.sayHello();
 console.log(m.greetingMessage);
 
+<a id="markdown-config-webpack-to-have-an-entry-point" name="config-webpack-to-have-an-entry-point"></a>
 ## config webpack to have an entry point
 run this command
 webpack ./wwwroot/app/main.js ./wwwroot/app/bundle.js
 
+<a id="markdown-install-a-nice-console-emulator" name="install-a-nice-console-emulator"></a>
 ## install a nice console emulator
 http://cmder.net/
 
 after that clean up index.html and then modify in the script section
 <script src="/app/bundle.js"></script>
 
+<a id="markdown-we-can-stop-the-typescript-watch-loader-too-and-use-webpack-" name="we-can-stop-the-typescript-watch-loader-too-and-use-webpack-"></a>
 ## we can stop the typescript watch loader too and use webpack !!!!
 
+<a id="markdown-explore-webpack" name="explore-webpack"></a>
 ## explore webpack 
 webpack --help
 
@@ -277,7 +291,7 @@ then in the tsconfig.json, we need to change to this
     }
 }
 
-
+Aurelia 
 
 
 
