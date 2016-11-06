@@ -292,6 +292,15 @@ then in the tsconfig.json, we need to change to this
 }
 
 Aurelia 
+I "download the Skeletons" from aurelia.io website
+
+in video https://www.youtube.com/watch?v=mfbVRKuGhxw part 4
+says that copy aurelia Skeleton navigation
+
+copy typescript webpack
+
+
+
 
 
 

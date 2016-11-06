@@ -19,6 +19,7 @@
         12. [12. calibre behind proxy (no no!)](#12-calibre-behind-proxy-no-no)
         13. [Visual studio changes](#visual-studio-changes)
         14. [nuget setting](#nuget-setting)
+        15. [web deploy trouble](#web-deploy-trouble)
 
 <!-- /TOC -->
 
@@ -228,6 +229,20 @@ configFile, if specified
 %ProgramData%\NuGet\Config\NuGet.Config
 
 or from https://docs.nuget.org/ndocs/schema/nuget.config-file
+
+<a id="markdown-web-deploy-trouble" name="web-deploy-trouble"></a>
+### web deploy trouble 
+from https://forums.iis.net/t/1214744.aspx?Could+not+connect+to+remote+computer+web+deploy+ERROR_DESTINATION_NOT_REACHABLE
+
+check like this:
+
+netstat -aon | findstr :8172
+  TCP    0.0.0.0:8172           0.0.0.0:0              LISTENING       4
+  TCP    [::]:8172              [::]:0                 LISTENING       4
+
+netstat is used to display protocal statistics and current TCP/IP network connections
+
+
 
 ac1bfa435450219c16639f0a579890128ecfb40c46dcc89cf9a1b7b2137ef13b8ac87bb696a680321470aa471356f3ee 
 
