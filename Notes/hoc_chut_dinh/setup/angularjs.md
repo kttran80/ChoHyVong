@@ -304,7 +304,46 @@ copy typescript webpack
 (not with aspnet)
 
 
+Downloading aurelia skeleton navigation
+After that copy four folders controllers properties views WWW route  
+And docker file, Project json ,program ,read me ,start up
+And inside not VS code, launch, tasks
+Done and now we can run the program by command line
+Npm install
+Now we can copy greeter
 
+Easy web pack
+If greater JS is a viewmodel, we need a view in html, so we create a new file
+
+Use Emmet template div h1 input type text
+
+Use string interpolation with $bracket
+
+Bootstrap 
+1. Use declarative to body tag with aurelia-app
+2. Programmatic api
+Modify main.ts 
+
+Aurelia fetch api for rest
+
+They are running on different ports, domains so we use cors
+
+Modify project.jaon
+Add "Microsoft.aspnet.cors"
+
+And startup.cs with
+Services.addcors($
+
+And app.usecors(builder=>builder.withorigins("localhost:9000")
+.allpwanyheader().allowanymethod());
+
+Aurelia has di injector
+Insert these lines in greeter.js
+import {inject} from 'aurelia-framework ';
+Import {HttpCluent} from 'aurelia-fetch-client'}
+
+And then decorate this
+@inject(HttpClient)
 
 
 
