@@ -21,6 +21,7 @@
     16. [install a nice console emulator](#install-a-nice-console-emulator)
     17. [we can stop the typescript watch loader too and use webpack !!!!](#we-can-stop-the-typescript-watch-loader-too-and-use-webpack-)
     18. [explore webpack](#explore-webpack)
+        2. [Aurelia](#aurelia)
 
 <!-- /TOC -->
 
@@ -291,13 +292,18 @@ then in the tsconfig.json, we need to change to this
     }
 }
 
-Aurelia 
+<a id="markdown-aurelia" name="aurelia"></a>
+### Aurelia 
 I "download the Skeletons" from aurelia.io website
 
 in video https://www.youtube.com/watch?v=mfbVRKuGhxw part 4
 says that copy aurelia Skeleton navigation
+https://github.com/aurelia/skeleton-navigation 
 
 copy typescript webpack
+(not with aspnet)
+
+
 
 
 

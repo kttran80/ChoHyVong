@@ -241,6 +241,7 @@ netstat -aon | findstr :8172
   TCP    [::]:8172              [::]:0                 LISTENING       4
 
 netstat is used to display protocal statistics and current TCP/IP network connections
+https://sites.google.com/site/xiangyangsite/home/technical-tips/linux-unix/networks-related-commands-on-linux/how-to-read-netstat--an-results
 
 
 
