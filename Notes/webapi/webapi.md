@@ -177,5 +177,9 @@ https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend
 
 <a id="markdown-12-json-formatter" name="12-json-formatter"></a>
 ## 12. json formatter
-https://weblog.west-wind.com/posts/2016/Jun/27/Upgrading-to-ASPNET-Core-RTM-from-RC2
-http://stackoverflow.com/questions/35772387/jsonserializersettings-and-asp-net-core
+services.AddMvc().AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.Formatting = Formatting.Indented;
+                });
+from http://stackoverflow.com/questions/39099601/how-can-i-configure-asp-net-core-web-api-json-format-indents
+                
