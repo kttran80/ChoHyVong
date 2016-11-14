@@ -12,6 +12,7 @@
 10. [9. Check this also](#9-check-this-also)
 11. [10. aha dotnet watch](#10-aha-dotnet-watch)
 12. [11. to support other app](#11-to-support-other-app)
+13. [12. json formatter](#12-json-formatter)
 
 <!-- /TOC -->
 <a id="markdown-read-this-understanding-aspnet-core-10-aspnet-5-and-why-it-will-replace-classic-aspnet" name="read-this-understanding-aspnet-core-10-aspnet-5-and-why-it-will-replace-classic-aspnet"></a>
@@ -53,6 +54,8 @@ https://dusted.codes/understanding-aspnet-core-10-aka-aspnet-5-and-why-it-will-r
 <a id="markdown-7-routing-table" name="7-routing-table"></a>
 ## 7. routing table
 check this: http://www.koderdojo.com/blog/asp-net-core-routing-and-routehandler-tutorial
+
+and https://stormpath.com/blog/routing-in-asp-net-core
 
 from https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing
 
@@ -127,6 +130,27 @@ and then
  
     var routes = routeBuilder.Build();
     app.UseRouter(routes);
+
+at last I found out:
+
+app.UseMvc(routes =>
+            {
+                {
+                    // api route
+                    routes.MapRoute(
+                            name: "default-api",
+                            template: "api/{controller}/{action}/{id?}");
+                };
+
+                {
+                    routes.MapRoute(
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
+                };
+                    
+            }       
+            
+            );    
           
 <a id="markdown-8-help-page" name="8-help-page"></a>
 ##8. help page
@@ -150,3 +174,8 @@ it can use to publish too
 <a id="markdown-11-to-support-other-app" name="11-to-support-other-app"></a>
 ## 11. to support other app 
 https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend
+
+<a id="markdown-12-json-formatter" name="12-json-formatter"></a>
+## 12. json formatter
+https://weblog.west-wind.com/posts/2016/Jun/27/Upgrading-to-ASPNET-Core-RTM-from-RC2
+http://stackoverflow.com/questions/35772387/jsonserializersettings-and-asp-net-core
