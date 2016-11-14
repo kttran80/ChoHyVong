@@ -22,6 +22,7 @@ A.  Reference:
     <https://docs.efproject.net/en/latest/providers/sqlite/>
 
 8.  Install Db browser for Sqlite on mac <http://sqlitebrowser.org/>
+9.  From this blog: http://www.hanselman.com/blog/ExploringAMinimalWebAPIWithASPNETCore.aspx
 
 <!-- -->
 
@@ -115,6 +116,9 @@ a.  “tools”:
 > }
 >
 > }
+
+5. we can create dbcontext and model from dbfirst approach: 
+    dotnet ef dbcontext scaffold "connection string" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models
 
 1.  start app: dotnet run
 
