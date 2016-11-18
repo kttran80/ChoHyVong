@@ -46,7 +46,42 @@ I have errors, so I do this (do this again!)
 ## work with values:
     1. interpolation  with template expression {{ pageTitle }} : 1 way binding (read only data)
     2. pre-defined directives:
-        *ng-if
-        
+    structural
+        *ngIf
+        *ngFor
+            let: local variable in the template
+    3. events:
 
-    
+        example:
+            <h1>{{pageTitle}}</h1>
+            <img [src]='product.imageUrl' >
+            <button (click)='toggleImage()' >
+        
+    4. ngModel directive: 2 way binding
+        <input [(ngModel)]='listFilter'>
+
+    note: use this in app.module.ts
+        import { FormsModule }   from '@angular/forms';
+
+        and 
+        @NgModule({
+              imports: [ BrowserModule, FormsModule ],
+              declarations: [ AppComponent, ProductListComponent ],
+              bootstrap: [ AppComponent ]
+            })
+
+    5. transform data by using pipe
+        
+        {{ product.productCode | lowercase }}
+
+        <<img [src]='product.imageUrl'
+              [title]='product.productName | uppercase' >
+
+        {{ product.price | currency | lowercase }
+
+        {{ product.price | currency:'USD':true: '1.2-2' }} //2 decimal places
+
+    6. interface : only at development time
+        export interface IProduct{
+        
+        }
